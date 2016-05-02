@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { List } from 'immutable'
-import ImmutablePropTypes from 'react-immutable-proptypes';
 import Line from '../components/map/Line.jsx';
 import Map from '../components/map/Map.jsx';
 import Marker from '../components/map/Marker.jsx'
@@ -9,7 +7,7 @@ import Marker from '../components/map/Marker.jsx'
 export default class MapContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {markers: List()}
+    this.state = {markers: []}
     this.generateMarkers = this.generateMarkers.bind(this);
   }
 
@@ -48,9 +46,9 @@ export default class MapContainer extends React.Component {
 }
 
 MapContainer.propTypes = {
-  places: ImmutablePropTypes.list,
+  places: PropTypes.array,
   addMarker: PropTypes.func,
-  markers: ImmutablePropTypes.list,
+  markers: PropTypes.array,
   saveMap: PropTypes.func,
   map: PropTypes.object
 };

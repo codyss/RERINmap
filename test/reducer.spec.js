@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import { Map, List } from 'immutable'
 import reducer from '../app/reducers/main';
 import * as types from '../app/constants';
 

@@ -8,7 +8,7 @@ export default class Marker extends React.Component {
 
   // when component receives new props check to see if should create a marker
   componentWillReceiveProps(nextProps) {
-    if(nextProps.map && nextProps.place.size && nextProps.place !== this.props.place) {
+    if(nextProps.map && nextProps.place.length && nextProps.place !== this.props.place) {
       const marker = createMapMarker(nextProps.place, nextProps.map)
       this.props.addMarker(this.props.id, marker)
     }
@@ -33,8 +33,8 @@ Marker.propTypes = {
 
 function createMapMarker(place, map) {
   return new google.maps.Marker({
-    position: {lat: place.get('lat'), lng: place.get('lng')},
+    position: {lat: place.lat, lng: place.lng},
     map: map,
-    title: place.get('name')
+    title: place.name
   })
 }

@@ -11,7 +11,7 @@ export default class Line extends React.Component {
   // when component receives new props check to see if should draw a line
   componentWillReceiveProps(nextProps) {
     if(this.state.line) this.state.line.setMap(null);
-    if(nextProps.placeA.size && nextProps.placeB.size) {
+    if(nextProps.placeA.length && nextProps.placeB.length) {
       this.createGooglePolyLine(nextProps.placeA, nextProps.placeB, this.props.map)
     }
   }
@@ -44,6 +44,6 @@ export default class Line extends React.Component {
 }
 
 Line.propTypes = {
-  places: ImmutablePropTypes.list,
+  places: PropTypes.array,
   map: PropTypes.any.isRequired
 };

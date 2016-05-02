@@ -1,6 +1,8 @@
 import React from 'react';
 import MapContainer from './MapContainer.jsx';
 import MainView from '../components/MainView.jsx';
+import Header from '../components/header/Header.jsx';
+import SidebarContainer from './SidebarContainer.jsx';
 import { connect } from 'react-redux';
 import * as Actions from '../actions';
 
@@ -28,6 +30,10 @@ class App extends React.Component {
   render() {
     return (
       <MainView>
+        <Header />
+        <SidebarContainer
+
+        />
         <MapContainer
           places={this.props.places}
           addMarker={this.addMarker}
@@ -42,9 +48,9 @@ class App extends React.Component {
 
 function mapStateToProps(store) {
   return {
-    places: store.main.get('places'),
-    markers: store.main.get('markers'),
-    map: store.main.get('map')
+    places: store.main.places,
+    markers: store.main.markers,
+    map: store.main.map
   }
 }
 

@@ -2,7 +2,6 @@ import chai, { expect } from 'chai';
 import { afterEach } from 'mocha';
 import chaiShallowDeep from 'chai-shallow-deep-equal';
 chai.use(chaiShallowDeep);
-import { List, Map } from 'immutable';
 import * as actions from '../app/actions'
 import * as types from '../app/constants'
 
